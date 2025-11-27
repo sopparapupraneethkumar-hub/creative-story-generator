@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - Writing Coach</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-pen-fancy"></i>
+                <span>Writing Coach</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#features">Features</a>
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./feedback.html" class="active">Feedback</a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="feedback-form-container">
+            <h1>Share Your Feedback</h1>
+            <p class="subtitle">Help us improve our services by sharing your experience</p>
+
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Overall Experience</label>
+                    <div class="rating">
+                        <i class="fas fa-star" data-rating="1"></i>
+                        <i class="fas fa-star" data-rating="2"></i>
+                        <i class="fas fa-star" data-rating="3"></i>
+                        <i class="fas fa-star" data-rating="4"></i>
+                        <i class="fas fa-star" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Feedback Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="ui">User Interface</option>
+                        <option value="features">Features</option>
+                        <option value="performance">Performance</option>
+                        <option value="suggestions">Suggestions</option>
+                        <option value="bugs">Bug Report</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback">Your Feedback</label>
+                    <textarea id="feedback" name="feedback" rows="5" required placeholder="Please share your thoughts, suggestions, or concerns..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Would you recommend us to others?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="recommend" value="yes" required>
+                            Yes
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="recommend" value="no">
+                            No
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="recommend" value="maybe">
+                            Maybe
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Feedback
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We're dedicated to helping writers of all levels improve their craft through AI-powered assistance.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Writing Coach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Star rating functionality
+        const stars = document.querySelectorAll('.rating .fa-star');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-rating');
+                ratingInput.value = rating;
+                
+                // Update stars visual
+                stars.forEach(s => {
+                    const sRating = s.getAttribute('data-rating');
+                    s.style.color = sRating <= rating ? '#ffd700' : '#ccc';
+                });
+            });
+
+            star.addEventListener('mouseover', () => {
+                const rating = star.getAttribute('data-rating');
+                stars.forEach(s => {
+                    const sRating = s.getAttribute('data-rating');
+                    s.style.color = sRating <= rating ? '#ffd700' : '#ccc';
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('feedbackForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your feedback!');
+            e.target.reset();
+            stars.forEach(star => star.style.color = '#ccc');
+            ratingInput.value = '';
+        });
+    </script>
+</body>
+</html> 

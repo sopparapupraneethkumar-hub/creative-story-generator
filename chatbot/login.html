@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .login-box {
+      background-color: #2d2d2d;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-header h2 {
+      color: #7c4dff;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .login-header p {
+      color: #b3b3b3;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #e0e0e0;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      background-color: #404040;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-size: 15px;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #7c4dff;
+      box-shadow: 0 0 0 2px rgba(124, 77, 255, 0.2);
+    }
+
+    .input-group input::placeholder {
+      color: #888;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #7c4dff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 0 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #6c3fff;
+    }
+
+    .signup-link {
+      text-align: center;
+      font-size: 14px;
+      color: #b3b3b3;
+      padding-top: 15px;
+      border-top: 1px solid #404040;
+    }
+
+    .signup-link a {
+      color: #7c4dff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #2d2d2d;
+      padding: 30px 20px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .user-info-box {
+      background-color: #363636;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px auto;
+      max-width: 300px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-info-title {
+      color: #7c4dff;
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .user-info-item {
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #444;
+    }
+
+    .user-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .user-info-label {
+      color: #b3b3b3;
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .user-info-value {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #b3b3b3;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #7c4dff;
+    }
+
+    .copyright {
+      color: #b3b3b3;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .login-box {
+        margin: 20px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-content">
+    <div class="login-box">
+      <div class="login-header">
+        <h2>Login</h2>
+        <p>Welcome back!</p>
+      </div>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="login-button">Log In</button>
+        <div class="signup-link">
+          Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Add your login logic here
+      console.log('Login attempt:', { email, password });
+      // After successful login, redirect to home page
+      // window.location.href = 'index.html';
+    });
+  </script>
+</body>
+
+</html>

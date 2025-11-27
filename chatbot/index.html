@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Writing Coach</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- Users Button and Dropdown -->
+      <div class="users-dropdown">
+        <button class="users-btn">
+          <i class="fas fa-users"></i> Users
+        </button>
+        <div class="users-list">
+          <div class="user-item">
+            <span class="user-name">S Praneeth Kumar</span>
+            <span class="user-reg">REG12314167</span>
+          </div>
+          <div class="user-item">
+            <span class="user-name">Appala Sai Vishnu</span>
+            <span class="user-reg">REG12312222</span>
+          </div>
+          <div class="user-item">
+            <span class="user-name">Charan Sai Mukunda Reddy</span>
+            <span class="user-reg">REG1233087</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="logo">
+        <i class="fas fa-pen-fancy"></i>
+        <span>Writing Coach</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="#features">Features</a>
+        <a href="./about.html">About</a>
+        <a href="./contact.html">Contact</a>
+        <a href="./feedback.html">Feedback</a>
+
+        <!-- Auth Links (shown when logged out) -->
+        <div class="auth-links" id="authLinks">
+          <a href="./login.html" class="auth-link">Login</a>
+          <a href="./signup.html" class="auth-link">Sign Up</a>
+        </div>
+
+        <!-- User Profile Section (shown when logged in) -->
+        <div class="user-profile" id="userProfileSection" style="display: none;">
+          <div class="user-info">
+            <span id="userName">Name</span>
+            <span id="userRegNo">Reg No</span>
+          </div>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+      </div>
+      <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1>Creative Writing Coach</h1>
+      <p>Your personal AI-powered writing companion</p>
+    </header>
+
+    <div class="writing-assistant-container">
+      <div class="assistant-section" id="brainstorming">
+        <h2><i class="fas fa-lightbulb"></i> Brainstorming Ideas</h2>
+        <p>Generate creative ideas and explore different angles for your writing</p>
+        <div class="input-area">
+          <textarea id="brainstorming-input" placeholder="Enter your topic or initial thoughts..." rows="3"></textarea>
+          <button id="brainstorming-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Get Ideas
+          </button>
+        </div>
+        <div class="results-area" id="brainstorming-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+
+      <div class="assistant-section" id="clarity">
+        <h2><i class="fas fa-edit"></i> Improve Clarity & Flow</h2>
+        <p>Enhance readability and make your writing more coherent</p>
+        <div class="input-area">
+          <textarea id="clarity-input" placeholder="Paste your text here..." rows="3"></textarea>
+          <button id="clarity-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Improve Text
+          </button>
+        </div>
+        <div class="results-area" id="clarity-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+
+      <div class="assistant-section" id="structure">
+        <h2><i class="fas fa-sitemap"></i> Structure Your Writing</h2>
+        <p>Get help organizing your content and creating a logical flow</p>
+        <div class="input-area">
+          <textarea id="structure-input" placeholder="Enter your content..." rows="3"></textarea>
+          <button id="structure-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Structure Content
+          </button>
+        </div>
+        <div class="results-area" id="structure-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+
+      <div class="assistant-section" id="grammar">
+        <h2><i class="fas fa-spell-check"></i> Grammar & Style</h2>
+        <p>Polish your writing with grammar checks and style improvements</p>
+        <div class="input-area">
+          <textarea id="grammar-input" placeholder="Paste your text for review..." rows="3"></textarea>
+          <button id="grammar-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Check & Improve
+          </button>
+        </div>
+        <div class="results-area" id="grammar-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+
+      <div class="assistant-section" id="tone">
+        <h2><i class="fas fa-comment-alt"></i> Tone & Voice</h2>
+        <p>Adjust your writing tone to match your intended audience</p>
+        <div class="input-area">
+          <textarea id="tone-input" placeholder="Enter your text..." rows="3"></textarea>
+          <button id="tone-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Analyze Tone
+          </button>
+        </div>
+        <div class="results-area" id="tone-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+
+      <div class="assistant-section" id="character">
+        <h2><i class="fas fa-user-edit"></i> Character Development</h2>
+        <p>Get feedback on character development and story elements</p>
+        <div class="input-area">
+          <textarea id="character-input" placeholder="Describe your character or scene..." rows="3"></textarea>
+          <button id="character-button" class="assistant-button">
+            <i class="fas fa-paper-plane"></i> Get Feedback
+          </button>
+        </div>
+        <div class="results-area" id="character-results">
+          <div class="results-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="features" class="features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Creative Inspiration</h3>
+          <p>Get unique story ideas and writing prompts tailored to your style.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-edit"></i>
+          <h3>Writing Feedback</h3>
+          <p>Receive constructive feedback on your writing in real-time.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-book"></i>
+          <h3>Story Development</h3>
+          <p>Help with character development, plot structure, and world-building.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <!-- Add the User Info Box -->
+      
+
+      <!-- Existing Footer Sections -->
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We're dedicated to helping writers of all levels improve their craft through AI-powered assistance.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Writing Coach. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
