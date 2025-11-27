@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Creative Writing Coach</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-pen-fancy"></i>
+        <span>Writing Coach</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="contact-hero">
+      <h1 class="animate-fade-in">Get in Touch</h1>
+      <p class="animate-fade-in-delay">We'd love to hear from you</p>
+    </section>
+
+    <div class="contact-container">
+      <div class="contact-info animate-slide-left">
+        <div class="info-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Us</h3>
+          <p>support@writingcoach.com</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-phone"></i>
+          <h3>Call Us</h3>
+          <p>+1 (555) 123-4567</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Visit Us</h3>
+          <p>123 Writing Street, Creative City</p>
+        </div>
+      </div>
+
+      <form class="contact-form animate-slide-right" id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+
+    <section class="faq-section">
+      <h2 class="animate-fade-in">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item animate-slide-up">
+          <div class="faq-question">
+            <h3>How does the AI writing coach work?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our AI writing coach uses advanced natural language processing to analyze your writing and provide
+              personalized feedback, suggestions, and creative prompts.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-slide-up">
+          <div class="faq-question">
+            <h3>Is my writing data secure?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we take data security seriously. All your writing and personal information is encrypted and stored
+              securely.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-slide-up">
+          <div class="faq-question">
+            <h3>Can I use the service for free?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a free tier with basic features. Premium features are available through our subscription plans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We're dedicated to helping writers of all levels improve their craft through AI-powered assistance.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Writing Coach. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
